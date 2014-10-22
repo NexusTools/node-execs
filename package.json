@@ -2,7 +2,7 @@
 	"name": "execs",
 	"author": "NexusTools",
 	"homepage": "https://www.nexustools.net/projects#execs",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"licenses": [
 		{
 			"type": "Apache License 2.0",

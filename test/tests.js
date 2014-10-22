@@ -69,11 +69,11 @@ describe('synchronous', function() {
         processes.waitFor(0.2);
         assert.ok(processes.isFinished(), "Processes did not finish");
         var errorsLength = processes.errors().length;
-        assert.ok(errorsLength == 2, "Expected 2 errors, got " + errorsLength);
-        assert.ok(helloReg.test(processes.readlog(1)), "Second command did not contain Hello WOrld");
-        assert.ok(failures == 2, "Expected 2 onError events, got " + failures);
-        assert.ok(successes == 2, "Expected 2 onSuccess events, got " + successes);
-        assert.ok(exits == 4, "Expected 4 onExit events, got " + exits);
+        assert.ok(errorsLength == 2, "Expected 2 errors, got " + errorsLength + "\n" + JSON.stringify(processes.errors()));
+        assert.ok(helloReg.test(processes.readlog(1)), "Second command did not contain Hello World\n" + JSON.stringify(processes.errors()));
+        assert.ok(failures == 2, "Expected 2 onError events, got " + failures + "\n" + JSON.stringify(processes.errors()));
+        assert.ok(successes == 2, "Expected 2 onSuccess events, got " + successes + "\n" + JSON.stringify(processes.errors()));
+        assert.ok(exits == 4, "Expected 4 onExit events, got " + exits + "\n" + JSON.stringify(processes.errors()));
     });
 });
 describe('asynchronous', function() {
