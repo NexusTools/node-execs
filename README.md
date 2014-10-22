@@ -12,8 +12,10 @@ usage
 -----
 ```
 var execs = require("execs");
-var i = execs.exec(["echo \"Hello World\"", "echo \"FooBar\""]);
+var i = execs([["echo", "Hello World"], ["echo, "FooBar"]]);
 i.waitFor(); // Wait until execution completes
+console.log(i.readlog(0)); // Dump command 1 output
+console.log(i.readlog(1)); // Dump command 1 output
 ```
 
 asynchronous usage is not complete yet.
