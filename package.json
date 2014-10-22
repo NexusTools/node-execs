@@ -1,0 +1,50 @@
+{
+	"name": "execs",
+	"author": "NexusTools",
+	"homepage": "https://www.nexustools.net/projects#execs",
+	"version": "0.1.0",
+	"licenses": [
+		{
+			"type": "Apache License 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		}
+	],
+	"description": "Execute multiple processes at once synchronously or asynchronously.",
+	"keywords": [
+		"NexusTools",
+		"synchronous",
+		"asynchronous",
+		"exec",
+		"execSync",
+		"spawn",
+        "spawnSync",
+        "concurrent",
+        "logging",
+        "waitFor",
+        "wait"
+	],
+	"bugs": {
+		"url" : "https://github.com/NexusTools/node-execs/issues"
+	},
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/NexusTools/node-execs.git"  
+	},
+	"preferGlobal" : true,
+	"main" : "index",
+	"scripts": {
+		"test": "mocha --bail --require ./test/support/env --reporter spec --check-leaks test/",
+		"test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/"
+	},
+	"engines" : { 
+		"node" : ">=1.0.0" 
+	},
+	"dependencies": {
+		"sleep": "latest",
+        "mkdirp": "latest"
+	},
+	"devDependencies": {
+		"istanbul": "0.3.2",
+    	"mocha": "~1.21.4"
+	}
+}
